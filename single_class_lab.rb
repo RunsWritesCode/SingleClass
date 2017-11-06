@@ -48,4 +48,9 @@ def team_coach
   return @coach
 end
 
+def set_team_coach(coach)
+  @coach = coach
+end
+
+
 end
