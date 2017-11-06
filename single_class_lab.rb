@@ -16,4 +16,36 @@ class Student
     @student_name = name
   end
 
+  def set_student_cohort(number)
+    @cohort = number
+  end
+
+  def student_talk
+    return "I can talk"
+  end
+
+  def student_language(language)
+    return "I love #{language}"
+  end
+
+end
+class Team
+def initialize(input_team_name, input_players, input_coach)
+  @team_name = input_team_name
+  @players = input_players
+  @coach = input_coach
+end
+
+def team_name
+  return @team_name
+end
+
+def team_players
+  return @players
+end
+
+def team_coach
+  return @coach
+end
+
 end

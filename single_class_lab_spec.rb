@@ -19,5 +19,39 @@ class TestStudent < MiniTest::Test
     assert_equal("Zaphod", student.student_name)
   end
 
+  def test_set_student_cohort
+    student = Student.new("Frogdog", 12)
+    student.set_student_cohort(42)
+    assert_equal(42, student.student_cohort)
+  end
+
+  def test_student_talk
+    student = Student.new("Frogdog", 12)
+    assert_equal("I can talk", student.student_talk)
+  end
+
+  def test_student_language
+    student = Student.new("Frogdog", 12)
+    # student.student_language("Ruby")
+    assert_equal("I love Ruby", student.student_language("Ruby"))
+  end
+end
+
+class TestTeam < MiniTest::Test
+
+  def test_team_name
+    team = Team.new("Fifers", 42, "Ron")
+    assert_equal("Fifers", team.team_name)
+  end
+
+  def test_team_players
+    team = Team.new("Fifers", 42, "Ron")
+    assert_equal(42, team.team_players)
+  end
+
+  def test_team_coach
+    team = Team.new("Fifers", 42, "Ron")
+    assert_equal("Ron", team.team_coach)
+  end
 
 end
