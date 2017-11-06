@@ -30,6 +30,7 @@ class Student
 
 end
 class Team
+attr_accessor :team_name, :players, :coach
 def initialize(input_team_name, input_players, input_coach)
   @team_name = input_team_name
   @players = input_players
@@ -52,5 +53,12 @@ def set_team_coach(coach)
   @coach = coach
 end
 
+def add_new_player(value)
+  @players << value
+end
+
+def check_if_player(name)
+  @players.include?(name)
+end
 
 end

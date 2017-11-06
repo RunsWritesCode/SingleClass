@@ -40,32 +40,36 @@ end
 class TestTeam < MiniTest::Test
 
   def test_team_name
-    team = Team.new("Fifers", 42, "Ron")
+    team = Team.new("Fifers", ["Fred", "John"], "Ron")
     assert_equal("Fifers", team.team_name)
   end
 
   def test_team_players
-    team = Team.new("Fifers", 42, "Ron")
-    assert_equal(42, team.team_players)
+    team = Team.new("Fifers", ["Fred", "John"], "Ron")
+    assert_equal(["Fred", "John"], team.team_players)
   end
 
   def test_team_coach
-    team = Team.new("Fifers", 42, "Ron")
+    team = Team.new("Fifers", ["Fred", "John"], "Ron")
     assert_equal("Ron", team.team_coach)
   end
 
   def test_set_team_coach
-    team = Team.new("Fifers", 42, "Ron")
+    team = Team.new("Fifers", ["Fred", "John"], "Ron")
     team.set_team_coach("Ronnie")
     assert_equal("Ronnie", team.team_coach)
   end
 
-  # def test_set_student_cohort
-  #   student = Student.new("Frogdog", 12)
-  #   student.set_student_cohort(42)
-  #   assert_equal(42, student.student_cohort)
-  # end
+  def test_add_new_player
+    team = Team.new("Fifers", ["Fred", "John"], "Ron")
+    team.add_new_player("Bill")
+    assert_equal(["Fred", "John", "Bill"], team.team_players)
+  end
 
+  def test_check_if_player
+    team = Team.new("Fifers", ["Fred", "John"], "Ron")
+    assert_equal(true, team.check_if_player("John"))
+  end
 
 
 end
